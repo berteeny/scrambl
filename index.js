@@ -24,3 +24,7 @@ for (var i = 0; i < numOfButtons; i++) {
     keyAnimation(pressedButton);
   });
 }
+
+const k = () => {
+  console.log("im new here where's the bathroom?! please? anyone? help.");
+};
