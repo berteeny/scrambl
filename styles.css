@@ -1,0 +1,55 @@
+body {
+  background-color: #033630;
+  text-align: center;
+}
+
+h1 {
+  color: antiquewhite;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-top: 5rem;
+}
+
+.row {
+  margin: 0.5rem;
+}
+
+button {
+  background-color: #fff6f7;
+  border: 0px;
+  border-radius: 10%;
+  box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.2);
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  width: 4rem;
+  padding: 8px;
+  margin: 1px;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+#Backspace {
+  font-size: 1.5rem;
+  border-radius: 5%;
+  width: 150px;
+  margin: 8px;
+}
+
+#Enter {
+  font-size: 1.5rem;
+  border-radius: 5%;
+  width: 90px;
+  margin: 8px;
+}
+
+.word {
+  height: 18rem;
+  width: 100%;
+}
+
+.keyPressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
