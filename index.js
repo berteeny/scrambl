@@ -1,8 +1,8 @@
 import { words } from "./assets/words.js";
 
-var randomNum = Math.floor(Math.random() * words.length);
-var randomWord = words[randomNum];
-var letters = randomWord.split("");
+const randomNum = Math.floor(Math.random() * words.length);
+const randomWord = words[randomNum];
+const letters = randomWord.split("");
 // Fisher-Yates algorithm
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -13,19 +13,27 @@ const shuffleArray = (array) => {
   }
   return array;
 };
-var shuffledLetters = shuffleArray(letters);
-var finalWord = shuffledLetters.join().replace(/\,/g, "").toLowerCase(); // this now works go from here
-console.log(finalWord);
+const shuffledLetters = shuffleArray(letters);
+const finalWord = shuffledLetters.join().replace(/\,/g, "").toLowerCase();
 
-// input into scrambledWord div
+document.getElementById("scrambledWord").innerHTML = finalWord;
 
 document.addEventListener("keydown", function (event) {
   keyAnimation(event.key);
   onScreenType(event.key);
 });
 
+const numOfButtons = document.querySelectorAll(".btn").length;
+for (let i = 0; i < numOfButtons; i++) {
+  document.querySelectorAll(".btn")[i].addEventListener("click", function () {
+    const pressedButton = this.id;
+    keyAnimation(pressedButton);
+    onScreenType(pressedButton);
+  });
+}
+
 function keyAnimation(currentKey) {
-  var pressedKey = document.querySelector("#" + currentKey);
+  const pressedKey = document.querySelector("#" + currentKey);
   pressedKey.classList.add("keyPressed");
 
   setTimeout(function () {
@@ -33,34 +41,66 @@ function keyAnimation(currentKey) {
   }, 100);
 }
 
-var numOfButtons = document.querySelectorAll(".btn").length;
-for (var i = 0; i < numOfButtons; i++) {
-  document.querySelectorAll(".btn")[i].addEventListener("click", function () {
-    var pressedButton = this.id;
-    keyAnimation(pressedButton);
-    onScreenType(pressedButton);
-  });
-}
-
 function onScreenType(currentKey) {
   if (
     currentKey !== "Backspace" &&
     currentKey !== "Enter" &&
-    document.getElementById("focusUserWord").value.length < 7
+    document.getElementById("userWord").value.length < 7
   ) {
-    document.getElementById("focusUserWord").value += currentKey;
+    document.getElementById("userWord").value += currentKey;
   } else if (currentKey === "Backspace") {
-    var word = document.getElementById("focusUserWord").value;
-    document.getElementById("focusUserWord").value = word.slice(
-      0,
-      word.length - 1
-    );
+    const word = document.getElementById("userWord").value;
+    document.getElementById("userWord").value = word.slice(0, word.length - 1);
   } else if (currentKey === "Enter") {
-    // this is untested, test this!!
-    if ((document.getElementById("focusUserWord").value = randomWord)) {
-      alert("nice");
-    } else {
-      alert("nah");
+    if (
+      document.getElementById("userWord").value.toLowerCase() ===
+      randomWord.toLowerCase()
+    ) {
+      correctPopup();
+    } else if (
+      document.getElementById("userWord").value.toLowerCase() !==
+      randomWord.toLowerCase()
+    ) {
+      incorrectPopup();
     }
   }
 }
+
+const overlay = document.getElementById("overlay");
+
+const popupCorrect = document.getElementById("correct");
+
+const popupIncorrect = document.getElementById("incorrect");
+
+function correctPopup() {
+  popupCorrect.classList.add("open-popup");
+  overlay.classList.add("on");
+}
+
+function incorrectPopup() {
+  popupIncorrect.classList.add("open-popup");
+  overlay.classList.add("on");
+}
+
+const closeButton = document.getElementById("closeIncorrect");
+
+const refreshButton = document.getElementById("closeCorrect");
+
+closeButton.addEventListener("click", function () {
+  popupIncorrect.classList.remove("open-popup");
+  overlay.classList.remove("on");
+  document.getElementById("userWord").value = "";
+});
+
+refreshButton.addEventListener("click", function () {
+  window.location.reload();
+});
+
+
+
+//NEXT: VV
+
+
+//hmm you could try to make the enter button work again to dismiss the popups but baby steps!
+//make the button animation work for popup buttons
+//put a green line around popup -> may require multiple divs - .borderGrn
