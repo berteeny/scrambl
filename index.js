@@ -102,5 +102,5 @@ refreshButton.addEventListener("click", function () {
 
 
 //hmm you could try to make the enter button work again to dismiss the popups but baby steps!
-//make the button animation work for popup buttons
+//make the button animation stop working when popups are open
 //put a green line around popup -> may require multiple divs - .borderGrn
