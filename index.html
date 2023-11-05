@@ -64,22 +64,23 @@
         <div class="row row4">
           <button class="btn" id="Backspace">Backspace</button>
           <button type="submit" class="btn" id="Enter">Enter</button>
-          <div class="popup" id="correct">
-            <img src="./assets/images/s.png" alt="Scrambl logo" />
-            <h2>Correct!</h2>
-            <button type="button" id="closeCorrect">Next</button>
-          </div>
-          <div class="popup" id="incorrect">
-            <div class="borderGrn">
-              <img src="./assets/images/s.png" />
-              <h2>Incorrect</h2>
-              <button type="button" id="closeIncorrect">Try again</button>
+          <div id="overlay">
+            <div class="popup" id="correct">
+              <img src="./assets/images/s.png" alt="Scrambl logo" />
+              <h2>Correct!</h2>
+              <button type="button" id="closeCorrect">Next</button>
+            </div>
+            <div class="popup" id="incorrect">
+              <div class="borderGrn">
+                <img src="./assets/images/s.png" />
+                <h2>Incorrect</h2>
+                <button type="button" id="closeIncorrect">Try again</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="overlay"></div>
-    <script src="index.js" type="module" ;></script>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

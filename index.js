@@ -18,9 +18,18 @@ const finalWord = shuffledLetters.join().replace(/\,/g, "").toLowerCase();
 
 document.getElementById("scrambledWord").innerHTML = finalWord;
 
+
 document.addEventListener("keydown", function (event) {
-  keyAnimation(event.key);
-  onScreenType(event.key);
+  if (overlay.classList.contains("on")) {
+    if (event.key === "Enter") {
+      popupIncorrect.classList.remove("open-popup");
+      overlay.classList.remove("on");
+      document.getElementById("userWord").value = "";
+    }
+  } else {
+    keyAnimation(event.key);
+    onScreenType(event.key);
+  }
 });
 
 const numOfButtons = document.querySelectorAll(".btn").length;
@@ -57,6 +66,7 @@ function onScreenType(currentKey) {
       randomWord.toLowerCase()
     ) {
       correctPopup();
+      refreshOnE();
     } else if (
       document.getElementById("userWord").value.toLowerCase() !==
       randomWord.toLowerCase()
@@ -65,6 +75,8 @@ function onScreenType(currentKey) {
     }
   }
 }
+
+console.log(randomWord);
 
 const overlay = document.getElementById("overlay");
 
@@ -96,11 +108,14 @@ refreshButton.addEventListener("click", function () {
   window.location.reload();
 });
 
-
+function refreshOnE() {
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      window.location.reload();
+    }
+  });
+}
 
 //NEXT: VV
 
-
-//hmm you could try to make the enter button work again to dismiss the popups but baby steps!
-//make the button animation stop working when popups are open
 //put a green line around popup -> may require multiple divs - .borderGrn
