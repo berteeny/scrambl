@@ -18,7 +18,6 @@ const finalWord = shuffledLetters.join().replace(/\,/g, "").toLowerCase();
 
 document.getElementById("scrambledWord").innerHTML = finalWord;
 
-
 document.addEventListener("keydown", function (event) {
   if (overlay.classList.contains("on")) {
     if (event.key === "Enter") {
