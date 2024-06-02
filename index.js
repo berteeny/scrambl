@@ -13,6 +13,8 @@ const shuffleArray = (array) => {
   }
   return array;
 };
+console.log(randomWord);
+
 const shuffledLetters = shuffleArray(letters);
 const finalWord = shuffledLetters.join().replace(/\,/g, "").toLowerCase();
 
@@ -104,6 +106,12 @@ closeButton.addEventListener("click", function () {
 });
 
 refreshButton.addEventListener("click", function () {
+  window.location.reload();
+});
+
+let scrambl = document.querySelector("h1");
+
+scrambl.addEventListener("click", function () {
   window.location.reload();
 });
 
