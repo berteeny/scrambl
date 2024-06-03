@@ -85,6 +85,8 @@ const popupCorrect = document.getElementById("correct");
 
 const popupIncorrect = document.getElementById("incorrect");
 
+const popupInstructions = document.getElementById("instructions-modal");
+
 function correctPopup() {
   popupCorrect.classList.add("open-popup");
   overlay.classList.add("on");
@@ -95,9 +97,18 @@ function incorrectPopup() {
   overlay.classList.add("on");
 }
 
+const instructionsButton = document.getElementById("instruct-modal");
+
+const instructionClose = document.getElementById("closeInstruction");
+
 const closeButton = document.getElementById("closeIncorrect");
 
 const refreshButton = document.getElementById("closeCorrect");
+
+instructionsButton.addEventListener("click", function () {
+  popupInstructions.classList.add("open-popup");
+  overlay.classList.add("on");
+});
 
 closeButton.addEventListener("click", function () {
   popupIncorrect.classList.remove("open-popup");
@@ -107,6 +118,11 @@ closeButton.addEventListener("click", function () {
 
 refreshButton.addEventListener("click", function () {
   window.location.reload();
+});
+
+instructionClose.addEventListener("click", function () {
+  popupInstructions.classList.remove("open-popup");
+  overlay.classList.remove("on");
 });
 
 let scrambl = document.querySelector("h1");
@@ -122,7 +138,3 @@ function refreshOnE() {
     }
   });
 }
-
-//NEXT: VV
-
-//put a green line around popup -> may require multiple divs - .borderGrn

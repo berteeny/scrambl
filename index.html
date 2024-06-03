@@ -14,7 +14,12 @@
     />
   </head>
   <body>
-    <h1>scrambl</h1>
+    <div class="container instructions">
+      <div id="instruct-modal">Instructions</div>
+    </div>
+    <div class="scrambl-h1">
+      <h1>scrambl</h1>
+    </div>
     <div class="container">
       <div id="scrambledWord">...</div>
       <input
@@ -65,6 +70,18 @@
           <button class="btn" id="Backspace">Backspace</button>
           <button type="submit" class="btn" id="Enter">Enter</button>
           <div id="overlay">
+            <div class="popup" id="instructions-modal">
+              <img src="./assets/images/s.png" alt="Scrambl logo" />
+              <h2 class="h2">Welcome to Scrambl</h2>
+              <p>
+                Your goal is to unscramble the word. <br />
+                Each word is 7 letters. <br />
+                There are no hints, but if you are really stuck and would like
+                to move on, <br />
+                you can skip to the next word by clicking the logo.
+              </p>
+              <button type="button" id="closeInstruction">Ok</button>
+            </div>
             <div class="popup" id="correct">
               <img src="./assets/images/s.png" alt="Scrambl logo" />
               <h2>Correct!</h2>
