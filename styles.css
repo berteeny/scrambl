@@ -1,6 +1,8 @@
 body {
   background-color: #033630;
   text-align: center;
+  /* turn off double tap to zoom vv */
+  touch-action: manipulation;
 }
 
 .scrambl-h1 {
