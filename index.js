@@ -118,6 +118,7 @@ closeButton.addEventListener("click", function () {
 
 refreshButton.addEventListener("click", function () {
   window.location.reload();
+  document.getElementById("userWord").value = "";
 });
 
 instructionClose.addEventListener("click", function () {
