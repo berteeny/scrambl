@@ -77,8 +77,6 @@ function onScreenType(currentKey) {
   }
 }
 
-console.log(randomWord);
-
 const overlay = document.getElementById("overlay");
 
 const popupCorrect = document.getElementById("correct");
