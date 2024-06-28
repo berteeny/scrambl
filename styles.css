@@ -185,8 +185,8 @@ p {
 
 @media (max-width: 740px) {
   .btn {
-    font-size: 18px;
-    width: 28px;
+    font-size: 11px;
+    width: 25px;
   }
 
   #instructions-modal {
@@ -205,12 +205,12 @@ p {
   }
 
   #Enter {
-    font-size: 1rem;
+    font-size: 12px;
     width: 65px;
   }
 
   #Backspace {
-    font-size: 1rem;
+    font-size: 12px;
     width: 100px;
   }
 
@@ -218,15 +218,17 @@ p {
     margin: 0;
   }
 
-  .instruct-modal {
-    font-size: 12px;
-    padding: 10px;
+  #instruct-modal {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .scrambl-h1 {
+    padding-top: 3rem;
   }
 
   h1 {
     font-size: 4rem;
     margin: 1rem;
-    margin-top: 3rem;
   }
 
   #scrambledWord {
