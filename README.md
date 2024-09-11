@@ -9,9 +9,7 @@ The game is written with raw Javascript, CSS and HTML, and has a starter JS file
 
 ## Installation
 
-Pull the code from this repository, open it in the text editor of your choice, then run `preview` in a browser with 
-
-`http://127.0.0.1:3000/index.html`
+Pull the code from this repository, open it in the text editor of your choice, then run `preview` in a browser window.
 
 
 ## Contributing
