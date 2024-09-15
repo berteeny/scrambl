@@ -7,6 +7,8 @@ Scrambl is a word game. The user is given a random scrambled 7 letter word and h
 
 The game is written with raw Javascript, CSS and HTML, and has a starter JS file with an array of 500 7-letter words.
 
+The app is hosted with AWS [here](https://scrambl.ca/)
+
 ## Installation
 
 Pull the code from this repository, open it in the text editor of your choice, then run `preview` in a browser window.
