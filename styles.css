@@ -185,8 +185,8 @@ p {
 
 @media (max-width: 740px) {
   .btn {
-    font-size: 11px;
-    width: 25px;
+    font-size: 14px;
+    width: 28px;
   }
 
   #instructions-modal {
@@ -262,5 +262,13 @@ p {
 
   h2 {
     margin: 12px;
+  }
+
+  .row {
+    margin: 7px 0px;
+  }
+
+  .keyboard {
+    gap: 5px;
   }
 }
